@@ -1,0 +1,15 @@
+function check(){
+  var w = weight.value;
+  if(w > 15){
+    alert("Overweight");
+    removed.style.display = remB.style.display = "block";
+  } else {
+    alert("OK");
+    removed.style.display = remB.style.display = "none";
+  }
+}
+
+function removeWeight(){
+  weight.value -= removed.value;
+  alert(weight.value <= 15 ? "OK now" : "Still overweight");
+}
