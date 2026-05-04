@@ -8,6 +8,8 @@
             //and a button to remove some
             //the remove function should update the weight
             //and let the user know when ok to proceed
+            // """"
+            // jhjh
             let check=()=>{
               alert('Checking Baggage weight: '+parseInt(document.getElementById('weight').value));
               //These should only display if it is actually overweight
