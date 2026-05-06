@@ -1,21 +1,49 @@
 //write a function to alert if overweight (15kg) baggage
 
-//call it from the page
+let check = () => {
 
-            //alert("Hello");//write a check function here...
-            //update: the check function should reveal the "removed" text input
-            //if the baggage is overweight
-            //and a button to remove some
-            //the remove function should update the weight
-            //and let the user know when ok to proceed
-            // """"
-            // jhjh
-            let check=()=>{
-              alert('Checking Baggage weight: '+parseInt(document.getElementById('weight').value));
-              //These should only display if it is actually overweight
-              document.getElementById('removed').style='display:block;'
-              document.getElementById('remB').style='display:block;'
-            }
-            let remove=()=>alert('Removing weight: '+parseInt(document.getElementById('removed').value))
+    let weight = parseInt(document.getElementById('weight').value);
 
-            //Test edit no. 2;
+    alert('Checking Baggage weight: ' + weight + 'kg');
+
+    if(weight > 15){
+
+        alert(`Baggage is overweight! Remove ${weight-15} weight.`);
+
+        document.getElementById('removed').style.display = 'block';
+        document.getElementById('remB').style.display = 'block';
+
+    }
+    else{
+
+        alert('Baggage OK. Proceed.');
+
+        document.getElementById('removed').style.display = 'none';
+        document.getElementById('remB').style.display = 'none';
+    }
+}
+
+let remove = () => {
+
+    let weight = parseInt(document.getElementById('weight').value);
+
+    let removed = parseInt(document.getElementById('removed').value);
+
+    let newWeight = weight - removed;
+
+    document.getElementById('weight').value = newWeight;
+
+    alert('Updated Weight: ' + newWeight + 'kg');
+
+    if(newWeight <= 15){
+
+        alert('Weight is OK to proceed.');
+
+        document.getElementById('removed').style.display = 'none';
+        document.getElementById('remB').style.display = 'none';
+    }
+    else{
+
+        alert('Still overweight!');
+    }
+}
